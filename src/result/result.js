@@ -2,9 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { Line } from 'react-chartjs-2';
-import 'chart.js/auto';
-// import './result.css';
+import './result.css';
 
 const Result = () => {
   const { id } = useParams();
@@ -23,37 +21,9 @@ const Result = () => {
     fetchData();
   }, [id]);
 
-  const chartData = {
-    labels: data.map(row => new Date(row.recorded_time).toLocaleTimeString()),
-    datasets: [
-      {
-        label: 'RPS',
-        data: data.map(row => row.RPS),
-        borderColor: 'rgba(75, 192, 192, 1)',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        fill: true,
-      },
-      {
-        label: 'Average Response Time',
-        data: data.map(row => row.avg_response_time),
-        borderColor: 'rgba(153, 102, 255, 1)',
-        backgroundColor: 'rgba(153, 102, 255, 0.2)',
-        fill: true,
-      },
-      {
-        label: 'Number of Users',
-        data: data.map(row => row.number_of_users),
-        borderColor: 'rgba(255, 159, 64, 1)',
-        backgroundColor: 'rgba(255, 159, 64, 0.2)',
-        fill: true,
-      },
-    ],
-  };
-
   return (
     <div className="result">
       <h1>Incremental Data</h1>
-      <Line data={chartData} />
       <table>
         <thead>
           <tr>
@@ -68,14 +38,14 @@ const Result = () => {
         </thead>
         <tbody>
           {data.map(row => (
-            <tr key={row.id}>
-              <td>{row.id}</td>
-              <td>{row.test_id}</td>
-              <td>{row.RPS}</td>
-              <td>{row.Failures_per_second}</td>
-              <td>{row.avg_response_time}</td>
-              <td>{row.number_of_users}</td>
-              <td>{new Date(row.recorded_time).toLocaleTimeString()}</td>
+            <tr key={row[0]}>
+              <td>{row[0]}</td>
+              <td>{row[1]}</td>
+              <td>{row[2]}</td>
+              <td>{row[3]}</td>
+              <td>{row[4]}</td>
+              <td>{row[5]}</td>
+              <td>{new Date(row[6] * 1000).toLocaleTimeString()}</td>
             </tr>
           ))}
         </tbody>
