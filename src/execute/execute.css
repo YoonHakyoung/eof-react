@@ -1,0 +1,50 @@
+/* execute.css */
+.Execute {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .Execute h2 {
+    margin-bottom: 20px;
+  }
+  
+  .Execute p {
+    margin: 10px 0;
+  }
+  
+  .Execute button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .Execute button:hover {
+    background-color: #45a049;
+  }
+  
+  .Execute table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .Execute table, .Execute th, .Execute td {
+    border: 1px solid #ddd;
+  }
+  
+  .Execute th, .Execute td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .Execute th {
+    background-color: #f2f2f2;
+  }
+  
