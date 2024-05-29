@@ -35,13 +35,18 @@ const List = () => {
   };
 
   const handleDelete = async (index) => {
-    try {
-      const idToDelete = tests[index].id;
-      await axios.delete(`http://localhost:8000/testcase/${idToDelete}`);
-      const newTests = tests.filter((_, i) => i !== index);
-      setTests(newTests);
-    } catch (error) {
-      console.error('Error deleting test case:', error);
+    const testToDelete = tests[index];
+    const confirmed = window.confirm(`${testToDelete.test_name}을(를) 정말 삭제하시겠습니까?`); // 확인 메시지 창
+
+    if (confirmed) {
+      try {
+        const idToDelete = testToDelete.id;
+        await axios.delete(`http://localhost:8000/testcase/${idToDelete}`);
+        const newTests = tests.filter((_, i) => i !== index);
+        setTests(newTests);
+      } catch (error) {
+        console.error('Error deleting test case:', error);
+      }
     }
   };
 

@@ -4,9 +4,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Chart from 'chart.js/auto';
 import './result.css';
-import BeforeResult from './before';
 
-const Result = () => {
+const BeforeResult = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   const rpsChartRef = useRef(null);
@@ -16,7 +15,7 @@ const Result = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/testcase/${id}/stats/`);
+        const response = await axios.get(`http://localhost:8000/testcase/${id}/pre-stats/`);
         
         setData(response.data);
         drawCharts(response.data);
@@ -157,9 +156,8 @@ const Result = () => {
       </div>
       
     </div>
-    {/* <BeforeResult /> */}
     </div>
   );
 }
 
-export default Result;
+export default BeforeResult;
