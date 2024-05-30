@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './execute.css';
+import { Link } from 'react-router-dom';
 
 const Execute = () => {
   const { id } = useParams();
@@ -45,19 +46,26 @@ const Execute = () => {
 
   return (
     <div className="Execute">
-      <h2>테스트 실행 중</h2>
+      
       {testData ? (
-        <div className="test-details">
-          <p>테스트 ID: {testData.test_id}</p>
-          <p>테스트 이름: {testData.test_name}</p>
-          <p>타겟 URL: {testData.target_url}</p>
-          <p>사용자 수: {testData.user_num}</p>
-          <p>추가 사용자 수: {testData.user_plus_num}</p>
-          <p>인터벌 시간: {testData.interval_time}</p>
-          <p>추가 카운트: {testData.plus_count}</p>
+        <div>
+          <h2>테스트가 완료되었습니다.</h2>
+          <div className="test-details">
+            <p>테스트 ID: {testData.test_id}</p>
+            <p>테스트 이름: {testData.test_name}</p>
+            <p>타겟 URL: {testData.target_url}</p>
+            <p>사용자 수: {testData.user_num}</p>
+            <p>추가 사용자 수: {testData.user_plus_num}</p>
+            <p>인터벌 시간: {testData.interval_time}</p>
+            <p>추가 카운트: {testData.plus_count}</p>
+          </div>
+          <Link to={`/result/${testData.test_id}`} className="result-button">결과 확인하기</Link>
         </div>
       ) : (
-        <p>로딩 중...</p>
+        <div>
+          <h2>테스트 실행 중</h2>
+          <p>로딩 중...</p>
+        </div>
       )}
     </div>
   );
