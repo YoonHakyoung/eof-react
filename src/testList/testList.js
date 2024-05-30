@@ -70,7 +70,7 @@ const List = () => {
             <div className="test-url">{test.target_url}</div>
             <div className="test-actions">
               <button onClick={(e) => { e.stopPropagation(); handleDelete(index); }}>삭제</button>
-              <button onClick={(e) => { e.stopPropagation(); handleRun(test.id, e); }}>실행</button>
+              <button onClick={(e) => { handleRun(test.id, e); }}>실행</button>
               <button onClick={(e) => handleResult(test.id, e)}>결과</button>
             </div>
           </div>
