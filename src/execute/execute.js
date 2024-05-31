@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './execute.css';
 import { Link } from 'react-router-dom';
+import Loading from '../loading/loading.js';
 
 const Execute = () => {
   const { id } = useParams();
@@ -49,7 +50,7 @@ const Execute = () => {
       
       {testData ? (
         <div>
-          <h2>테스트가 완료되었습니다.</h2>
+          <h2>테스트가 완료되었습니다!</h2>
           <div className="test-details">
             <p>테스트 ID: {testData.test_id}</p>
             <p>테스트 이름: {testData.test_name}</p>
@@ -63,10 +64,10 @@ const Execute = () => {
         </div>
       ) : (
         <div>
-          <h2>테스트 실행 중</h2>
-          <p>로딩 중...</p>
+          <Loading />
         </div>
       )}
+       
     </div>
   );
 }

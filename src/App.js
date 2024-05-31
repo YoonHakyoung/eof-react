@@ -6,7 +6,7 @@ import HeaderBar from './header/headerBar.js'
 import List from './testList/testList.js'
 import Result from './result/result.js';
 import Execute from './execute/execute.js';
-import Logmsg from './logmsg/logmsg.js';
+import Loading from './loading/loading.js';
 import './App.css';
 
 
@@ -21,7 +21,7 @@ const RouterComponent = () => {
           <Route path="/list" element={<List />} />
           <Route path="/result/:id" element={<Result />} />
           <Route path="/execute/:id" element={<Execute />} />
-          <Route path="/log" element={<Logmsg />} />
+          <Route path="/loading/:id" element={<Loading />} />
         </Routes>
       </BrowserRouter>
     </div>
