@@ -144,7 +144,7 @@ const Loading = () => {
   return (
     <div>
     <div className="loading">
-      <h2>테스트 진행 중 ...</h2>
+      <h2>Incremental 테스트 진행 중 ...</h2>
 
       {/* 차트 컨테이너 */}
       <div className="charts-container">

@@ -36,7 +36,7 @@ const List = () => {
 
   const handleDelete = async (index) => {
     const testToDelete = tests[index];
-    const confirmed = window.confirm(`${testToDelete.test_name}을(를) 정말 삭제하시겠습니까?`); // 확인 메시지 창
+    const confirmed = window.confirm(`${testToDelete.test_name}을(를) 정말 삭제하시겠습니까?`);
 
     if (confirmed) {
       try {
@@ -52,7 +52,13 @@ const List = () => {
 
   const handleRun = (id, event) => {
     event.stopPropagation();
-    navigate(`/execute/${id}`);
+    
+    const test = tests.find(t => t.id === id);
+    if (test.user_plus_num === 0 || test.interval_time === 0 || test.plus_count === 0) {
+      navigate(`/spike/${id}`);
+    } else {
+      navigate(`/execute/${id}`);
+    }
   };
 
   const handleResult = (id, event) => {

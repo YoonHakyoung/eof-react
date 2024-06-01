@@ -7,6 +7,7 @@ import List from './testList/testList.js'
 import Result from './result/result.js';
 import Execute from './execute/execute.js';
 import Loading from './loading/loading.js';
+import Spike from './spike/spike.js';
 import './App.css';
 
 
@@ -22,6 +23,7 @@ const RouterComponent = () => {
           <Route path="/result/:id" element={<Result />} />
           <Route path="/execute/:id" element={<Execute />} />
           <Route path="/loading/:id" element={<Loading />} />
+          <Route path="/spike/:id" element={<Spike />} />
         </Routes>
       </BrowserRouter>
     </div>
