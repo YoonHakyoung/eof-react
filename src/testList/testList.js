@@ -75,9 +75,9 @@ const List = () => {
             <div className="test-name">{test.test_name}</div>
             <div className="test-url">{test.target_url}</div>
             <div className="test-actions">
-              <button onClick={(e) => { e.stopPropagation(); handleDelete(index); }}>삭제</button>
-              <button onClick={(e) => { handleRun(test.id, e); }}>실행</button>
-              <button onClick={(e) => handleResult(test.id, e)}>결과</button>
+              <button className="deleteTest" onClick={(e) => { e.stopPropagation(); handleDelete(index); }}>삭제</button>
+              <button className="excuteTest" onClick={(e) => { handleRun(test.id, e); }}>실행</button>
+              <button className="resultTest" onClick={(e) => handleResult(test.id, e)}>결과</button>
             </div>
           </div>
           {expandedIndex === index && (

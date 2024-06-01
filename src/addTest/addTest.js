@@ -46,15 +46,34 @@ const AddTestCaseForm = () => {
 
   return (
     <div className="input_container">
-      <div className="add-page-title"><h2>ADD TESTCASE</h2></div>
-      <input type="text" name="target_url" value={formData.target_url} onChange={handleChange} placeholder="Target URL" />
-      <input type="text" name="test_name" value={formData.test_name} onChange={handleChange} placeholder="Test Name" />
-      <input type="number" name="user_num" value={formData.user_num} onChange={handleChange} placeholder="User Number" />
-      <input type="number" name="user_plus_num" value={formData.user_plus_num} onChange={handleChange} placeholder="User Plus Number" />
-      <input type="number" name="interval_time" value={formData.interval_time} onChange={handleChange} placeholder="Interval Time" />
-      <input type="number" name="plus_count" value={formData.plus_count} onChange={handleChange} placeholder="Plus Count" />
+      <div className="add-page-title"><h2>SET TESTCASE</h2></div>
+      <div className="input-wrapper">
+        <input type="text" name="target_url" value={formData.target_url} onChange={handleChange} placeholder="대상 URL" />
+        <span className="tooltip">ex) http://www.example.com</span>
+      </div>
+      <div className="input-wrapper">
+        <input type="text" name="test_name" value={formData.test_name} onChange={handleChange} placeholder="Test 이름" />
+        <span className="tooltip">ex) My Test</span>
+      </div>
+      <div className="input-wrapper">
+        <input type="number" name="user_num" value={formData.user_num} onChange={handleChange} placeholder="초기 유저 수 (명)" />
+        <span className="tooltip">ex) 100</span>
+      </div>
+      <div className="input-wrapper">
+        <input type="number" name="user_plus_num" value={formData.user_plus_num} onChange={handleChange} placeholder="증가 유저 수 (명)" />
+        <span className="tooltip">ex) 10</span>
+      </div>
+      <div className="input-wrapper">
+        <input type="number" name="interval_time" value={formData.interval_time} onChange={handleChange} placeholder="증가 간격 (초)" />
+        <span className="tooltip">ex) 5</span>
+      </div>
+      <div className="input-wrapper">
+        <input type="number" name="plus_count" value={formData.plus_count} onChange={handleChange} placeholder="증가 횟수 (번)" />
+        <span className="tooltip">ex) 5</span>
+      </div>
       <Link to='/list'><button onClick={handleSubmit} className="submit_button">Submit</button></Link>
     </div>
+
   );
 };
 

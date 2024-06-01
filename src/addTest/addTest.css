@@ -57,7 +57,7 @@ html {
     margin: 20px 0;
     border: none;
     border-radius: 4px;
-    background-color: #282c34;
+    background-color: #4901ac; 
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -67,9 +67,44 @@ html {
 
 .submit_button:hover {
     transform: scale(1.05); /* 호버 시 확대 효과 */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 효과 */
+    background: #0073ff;
+    color: #fff705;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .add-page-title {
     margin-bottom: 0px;
 }
+
+.input-wrapper {
+    position: relative;
+    margin: 10px;
+  }
+  
+  .input_container input {
+    padding: 10px;
+    width: 300px;
+  }
+  
+  .tooltip {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%; /* Position above the input */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 10px; /* Smaller font size */
+  }
+  
+  .input-wrapper:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }

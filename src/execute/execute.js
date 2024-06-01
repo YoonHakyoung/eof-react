@@ -52,13 +52,12 @@ const Execute = () => {
         <div>
           <h2>테스트가 완료되었습니다!</h2>
           <div className="test-details">
-            <p>테스트 ID: {testData.test_id}</p>
-            <p>테스트 이름: {testData.test_name}</p>
-            <p>타겟 URL: {testData.target_url}</p>
-            <p>사용자 수: {testData.user_num}</p>
-            <p>추가 사용자 수: {testData.user_plus_num}</p>
-            <p>인터벌 시간: {testData.interval_time}</p>
-            <p>추가 카운트: {testData.plus_count}</p>
+            <p>Test 이름: {testData.test_name}</p>
+            <p>대상 URL: {testData.target_url}</p>
+            <p>초기 유저 수: {testData.user_num} 명</p>
+            <p>증가 유저 수: {testData.user_plus_num} 명</p>
+            <p>증가 간격: {testData.interval_time} 초</p>
+            <p>증가 횟수: {testData.plus_count} 번</p>
           </div>
           <Link to={`/result/${testData.test_id}`} className="result-button">결과 확인하기</Link>
         </div>
